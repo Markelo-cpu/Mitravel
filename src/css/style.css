@@ -1,0 +1,396 @@
+@import "../libs/bootstrap/bootstrap-grid.min.css";
+@import "../libs/fonts/SFProDisplay/stylesheet.css";
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1263px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.header {
+  width: 100%;
+  height: 100px;
+  position: absolute;
+  z-index: 3;
+  padding-left: 60px;
+}
+.header__menu {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 33px;
+  height: 50px;
+  width: 100%;
+  position: relative;
+}
+.header__title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: "SF Pro Display", sans-serif;
+  font-weight: bold;
+  font-size: 17px;
+  line-height: 26px;
+  letter-spacing: 2px;
+  color: #FFFFFF;
+  text-transform: uppercase;
+}
+.header__networkImages {
+  display: flex;
+  justify-content: space-between;
+  width: 61px;
+  height: 20px;
+}
+.header__networkImages_img:first-child {
+  width: 12px;
+  height: 16px;
+}
+.header__networkImages_img:nth-child(2) {
+  width: 17px;
+  height: 16.31px;
+}
+
+.hamburger-menu {
+  width: 30px;
+  height: 20px;
+  position: fixed;
+  top: 35px;
+  right: 100px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.line {
+  width: 100%;
+  height: 2px;
+  background-color: #FFFFFF;
+  transition: all 0.8s;
+}
+
+.change .line-1 {
+  transform: rotateZ(-405deg) translate(-8px);
+}
+
+.change .line-2 {
+  opacity: 0;
+}
+
+.change .line-3 {
+  transform: rotateZ(405deg) translate(-6.7px);
+}
+
+.nav-list {
+  padding-bottom: 13%;
+  border-radius: 10px 10px 0 0px;
+  height: 100vh;
+  width: 60vh;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  background-color: #1f2434;
+  list-style: none;
+  right: 7%;
+  top: 62px;
+  z-index: 200;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.7s;
+}
+
+.change .nav-list {
+  opacity: 1;
+  visibility: visible;
+}
+
+.nav-item {
+  margin: 1.5vh 0;
+}
+
+.nav-link {
+  font-family: "SF Pro Display", sans-serif;
+  text-decoration: none;
+  font-size: 22px;
+  color: #FFFFFF;
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  position: relative;
+  padding: 3px 0;
+}
+
+.nav-link::before,
+.nav-link::after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: #FFFFFF;
+  position: absolute;
+  left: 0;
+  transform: scaleX(0);
+  transition: transform 0.5s;
+}
+
+.nav-link::after {
+  bottom: 0;
+  transform-origin: right;
+}
+
+.nav-link::before {
+  top: 0;
+  transform-origin: left;
+}
+
+.nav-link:hover::before,
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+.home {
+  background: url("../images/home/Background.jpg") no-repeat top left/100% 100%;
+  background-size: cover;
+  text-align: start;
+  padding: 148px 50px 40px 65px;
+  height: 100vh;
+  position: relative;
+}
+.home__content {
+  width: 70%;
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+}
+.home__newBook {
+  margin-left: 20px;
+  font-family: "SF Pro Display", sans-serif;
+  font-size: 11px;
+  line-height: 13px;
+  letter-spacing: 2px;
+  color: #FFFFFF;
+  text-transform: uppercase;
+}
+.home__title {
+  margin: 40px 0 20px;
+  font-family: "SF Pro Display", sans-serif;
+  font-size: 37px;
+  line-height: 43px;
+  color: #FFFFFF;
+}
+.home__subtitle {
+  font-family: "SF Pro Display", sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  color: #FFFFFF;
+  margin-bottom: 39px;
+}
+.home__btn {
+  font-family: "SF Pro Display", sans-serif;
+  width: 274px;
+  height: 45px;
+  font-size: 12px;
+  line-height: 45px;
+  text-align: center;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  outline: none;
+  border: none;
+  background: #E8594E;
+  border-radius: 8px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.home__btn:hover {
+  color: #c70101;
+  background-color: #FFFFFF;
+  transition-duration: 0.3s;
+}
+.home__video {
+  width: 66%;
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  bottom: 0;
+}
+.home__form {
+  height: 55px;
+  width: 90%;
+}
+.home__input {
+  position: absolute;
+  bottom: 0;
+  font-family: "SF Pro Display", sans-serif;
+  color: #1e1e1e;
+  width: 87.7%;
+  height: 55px;
+  outline: none;
+  border: none;
+  border-radius: 5px 0 0 0;
+  padding-left: 56px;
+  background-color: #FFFFFF;
+  cursor: pointer;
+}
+.home__input:focus::placeholder {
+  color: transparent;
+}
+.home__inputBtn {
+  position: absolute;
+  width: 12.6%;
+  background-color: #FFFFFF;
+  height: 55px;
+  bottom: 0;
+  left: 86%;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+.home__film {
+  width: 100vh;
+  height: 50px;
+  background-color: #E8594E;
+}
+.home__slider {
+  display: flex;
+  width: 276px;
+  height: 200px;
+  position: absolute;
+  left: 895px;
+  bottom: 0;
+  border-radius: 5px 5px 0 0;
+  background: #73AFBA;
+}
+.home__slider_img {
+  width: 276px;
+  height: 145px;
+  border-radius: 5px 5px 0 0;
+}
+.home__videoSub {
+  text-align: center;
+  margin-top: 22px;
+  color: #FFFFFF;
+  font-family: "SF Pro Display", sans-serif;
+  font-size: 10px;
+  letter-spacing: 2.18182px;
+  text-transform: uppercase;
+}
+.home__swipeImg {
+  width: 10px;
+  height: 20px;
+}
+.home__play {
+  width: 22px;
+  height: 24px;
+  background: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -40%);
+}
+.home__play-btn {
+  width: 5px;
+  height: 30px;
+}
+
+.owl-nav .owl-prev {
+  position: absolute;
+  top: 78%;
+  left: 10px;
+}
+
+.owl-nav .owl-next {
+  position: absolute;
+  top: 78%;
+  right: 10px;
+}
+
+.travelPro {
+  padding: 50px 60px 150px 60px;
+  background-color: #fefefe;
+}
+.travelPro__title {
+  font-family: "SF Pro Display", sans-serif;
+  font-size: 37px;
+  line-height: 40px;
+  color: #1c2e3d;
+}
+.travelPro__cardBlock {
+  width: 100%;
+  height: 360px;
+  background: #87e887;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 60px;
+}
+.travelPro__card {
+  position: relative;
+  overflow: hidden;
+  width: 265px;
+  height: 100%;
+  background: #FFFFFF;
+}
+.travelPro__card-image {
+  position: absolute;
+  opacity: 0.9;
+}
+.travelPro__gridOverlay {
+  background: rgba(115, 175, 186, 0.91);
+  height: 100%;
+  grid-column: -1;
+  grid-row: -1;
+  position: relative;
+  display: grid;
+  transform: translateY(101%);
+  transition: all 0.3s ease-in-out;
+}
+.travelPro__view {
+  position: absolute;
+  top: 300px;
+  left: 30px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #FFFFFF;
+  font-size: 12px;
+  background: none;
+  outline: none;
+  border: none;
+  text-transform: capitalize;
+  font-family: "SF Pro Display", sans-serif;
+  cursor: pointer;
+}
+.travelPro__overlay {
+  position: fixed;
+  background: rgba(71, 69, 69, 0.7);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: none;
+  z-index: 3;
+}
+.travelPro__overlay-inner {
+  background: white;
+  width: 700px;
+  padding: 20px;
+  position: relative;
+  opacity: 1;
+}
+
+.travelPro__card:hover .travelPro__gridOverlay {
+  transform: translateX(0%);
+}
+
+.open {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}

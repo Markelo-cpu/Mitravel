@@ -1,0 +1,140 @@
+.header {
+  width: 100%;
+  height: 100px;
+  position: absolute;
+  z-index: 3;
+  padding-left: 60px;
+  &__menu {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 33px;
+    height: 50px;
+    width: 100%;
+    position: relative;
+  }
+  &__title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: "SF Pro Display", sans-serif;
+    font-weight: bold;
+    font-size: 17px;
+    line-height: 26px;
+    letter-spacing: 2px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+
+  }
+  &__networkImages {
+    display: flex;
+    justify-content: space-between;
+    width: 61px;
+    height: 20px;
+    &_img:first-child {
+      width: 12px;
+      height: 16px;
+    }
+    &_img:nth-child(2) {
+      width: 17px;
+      height: 16.31px;
+    }
+  }
+}
+.hamburger-menu {
+  width: 30px;
+  height: 20px;
+  position: fixed;
+  top: 35px;
+  right: 100px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.line {
+  width: 100%;
+  height: 2px;
+  background-color: #FFFFFF;
+  transition: all 0.8s;
+}
+
+.change .line-1 {
+  transform: rotateZ(-405deg) translate(-8px);
+}
+
+.change .line-2 {
+  opacity: 0;
+}
+
+.change .line-3 {
+  transform: rotateZ(405deg) translate(-6.7px);
+}
+
+.nav-list {
+  padding-bottom: 13%;
+  border-radius: 10px 10px 0 0px ;
+  height: 100vh;
+  width: 60vh;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  background-color: #1f2434;
+  list-style: none;
+  right: 7%;
+  top: 62px;
+  z-index: 200;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.7s;
+}
+
+.change .nav-list {
+  opacity: 1;
+  visibility: visible;
+}
+
+.nav-item {
+  margin: 1.5vh 0;
+}
+
+.nav-link {
+  font-family: "SF Pro Display", sans-serif;
+  text-decoration: none;
+  font-size: 22px;
+  color: #FFFFFF;
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  position: relative;
+  padding: 3px 0;
+}
+
+.nav-link::before,
+.nav-link::after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: #FFFFFF;
+  position: absolute;
+  left: 0;
+  transform: scaleX(0);
+  transition: transform 0.5s;
+}
+
+.nav-link::after {
+  bottom: 0;
+  transform-origin: right;
+}
+
+.nav-link::before {
+  top: 0;
+  transform-origin: left;
+}
+
+.nav-link:hover::before,
+.nav-link:hover::after {
+  transform: scaleX(1);
+}

@@ -1,0 +1,85 @@
+.travelPro{
+  padding: 50px 60px 150px 60px;
+  background-color: #fefefe;
+  &__title{
+    font-family: "SF Pro Display", sans-serif;
+    font-size: 37px;
+    line-height: 40px;
+    color: #1c2e3d;
+  }
+  &__cardBlock{
+    width: 100%;
+    height: 360px;
+    background: #87e887;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 60px;
+  }
+  &__card{
+    position: relative;
+    overflow: hidden;
+    width: 265px;
+    height: 100%;
+    background: #FFFFFF;
+    &-image{
+        position: absolute;
+        opacity: 0.9;
+    }
+  }
+  &__gridOverlay{
+    background: rgba(115, 175, 186, 0.91);
+    height: 100%;
+    grid-column: -1;
+    grid-row: -1;
+    position: relative;
+    display: grid;
+    transform: translateY(101%);
+    transition: all 0.3s ease-in-out;
+  }
+  &__view{
+    position: absolute;
+    top: 300px;
+    left: 30px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #FFFFFF;
+    font-size: 12px;
+    background: none;
+    outline: none;
+    border: none;
+    text-transform: capitalize;
+    font-family: "SF Pro Display",sans-serif;
+    cursor: pointer;
+  }
+  &__overlay{
+    position: fixed;
+    background: rgba(71, 69, 69, 0.7);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: none;
+    z-index: 3;
+    &-inner{
+        background: white;
+        width: 700px;
+        padding: 20px;
+        position: relative;
+        opacity: 1;
+    }
+  }
+}
+
+.travelPro__card:hover .travelPro__gridOverlay{
+  transform: translateX(0%);
+}
+
+
+.open{
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+
+
